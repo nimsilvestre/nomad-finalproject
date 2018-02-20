@@ -15,7 +15,7 @@ export default class App extends React.Component {
         //will call after calling render - one life cycle component
         axios.get('/nomads').then(({ data }) => {
             this.setState({
-                nomads: data.results
+                nomads: data.results //to get the results array
             });
             //console.log('CLIENT SIDE GET NOMADS WORKING', data);
         });

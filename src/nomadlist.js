@@ -1,19 +1,26 @@
 import React from 'react';
+import { Card, Image } from 'semantic-ui-react';
 
 export class NomadsList extends React.Component {
     render() {
-        console.log('DASHBOARD:', this.props);
+        console.log('NOMAD LIST:', this.props);
         return (
-            <div>
-                <a className="logout-btn" href="/logout">
-                    Logout
-                </a>
-                <h1>Nomads</h1>
-                <ul>
-                    {this.props.nomads.map(nomad => (
-                        <li key={nomad.id}>{nomad.first}</li>
-                    ))}
-                </ul>
+            <div className="ui three stackable cards">
+                {this.props.nomads.map(nomad => (
+                    <Card key={nomad.id}>
+                        <Image src="{nomad.image}" />
+                        <Card.Content>
+                            <Card.Header>{nomad.first}</Card.Header>
+                            <Card.Meta>{nomad.created_at}</Card.Meta>
+                            <Card.Description>
+                                <p>
+                                    {nomad.gender},{nomad.age}
+                                </p>
+                                <p>{nomad.location}</p>
+                            </Card.Description>
+                        </Card.Content>
+                    </Card>
+                ))}
             </div>
         );
     }
