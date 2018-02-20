@@ -134,6 +134,19 @@ app.post('/login', (req, res) => {
     }
 });
 
+//ROUTER GET ALL NOMADS
+app.get('/nomads', (req, res) => {
+    return db
+        .getAllNomads()
+        .then(results => {
+            res.json({ results });
+            console.log(results);
+        })
+        .catch(err => {
+            console.log('ERR WITH GET ALL NOMADS', err);
+        });
+});
+
 //LOG OUT OF HEREEEE
 app.get('/logout', function(req, res) {
     req.session.user = null;

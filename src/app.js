@@ -7,13 +7,28 @@ import { DashboardPage } from './dashboard';
 export default class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            nomads: []
+        };
+    }
+    componentDidMount() {
+        //will call after calling render - one life cycle component
+        axios.get('/nomads').then(({ data }) => {
+            this.setState({
+                nomads: data
+            });
+            //console.log('CLIENT SIDE GET NOMADS WORKING', data);
+        });
     }
 
     render() {
         return (
             <BrowserRouter>
-                <Route exact path="/" render={() => <DashboardPage />} />
+                <Route
+                    exact
+                    path="/"
+                    render={() => <DashboardPage nomads={this.state.nomads} />}
+                />
             </BrowserRouter>
         );
     }

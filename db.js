@@ -73,3 +73,19 @@ module.exports.getUserInfo = function(email) {
             throw err;
         });
 };
+
+module.exports.getAllNomads = function() {
+    const query = `
+        SELECT * FROM nomads`;
+    return db
+        .query(query)
+        .then(results => {
+            //DB QUERY
+            return results.rows; //returning results!!
+        })
+        .catch(err => {
+            console.log('ERR WITH getAllNomads in the module', err);
+        });
+};
+
+// Get Nomad info
