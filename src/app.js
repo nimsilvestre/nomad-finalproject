@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { DashboardPage } from './dashboard';
+import { NomadsList } from './nomadlist';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -15,7 +15,7 @@ export default class App extends React.Component {
         //will call after calling render - one life cycle component
         axios.get('/nomads').then(({ data }) => {
             this.setState({
-                nomads: data
+                nomads: data.results
             });
             //console.log('CLIENT SIDE GET NOMADS WORKING', data);
         });
@@ -27,7 +27,7 @@ export default class App extends React.Component {
                 <Route
                     exact
                     path="/"
-                    render={() => <DashboardPage nomads={this.state.nomads} />}
+                    render={() => <NomadsList nomads={this.state.nomads} />}
                 />
             </BrowserRouter>
         );
