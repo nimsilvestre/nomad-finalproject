@@ -2,7 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { NomadsList } from './nomadlist';
+import NomadsList from './nomadlist';
+import { Container } from 'semantic-ui-react';
+import About from './components/About';
+import Contact from './components/Contact';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -24,11 +27,15 @@ export default class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <Route
-                    exact
-                    path="/"
-                    render={() => <NomadsList nomads={this.state.nomads} />}
-                />
+                <Container text>
+                    <Route
+                        exact
+                        path="/"
+                        render={() => <NomadsList nomads={this.state.nomads} />}
+                    />
+                    <Route path="/about" component={About} />
+                    <Route path="/contact" component={Contact} />
+                </Container>
             </BrowserRouter>
         );
     }
