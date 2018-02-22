@@ -7,7 +7,7 @@ import { ModalNomads } from './ModalNomads';
 import { Container, Grid } from 'semantic-ui-react';
 import About from './components/About';
 import Contact from './components/Contact';
-import LocationMap from './components/LocationMap';
+import {LocationMap} from './components/LocationMap';
 import NavBar from './components/NavBar';
 import HeaderApp from './components/HeaderApp';
 

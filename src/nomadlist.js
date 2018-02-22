@@ -16,7 +16,6 @@ export class NomadsList extends React.Component {
         console.log('NOMAD LIST:', this.props);
         return (
             <div>
-            <input type="text" onChange={this.searchHandler}></input>
                 <div style={style.div1} className="ui three stackable cards">
                     {this.props.nomads.map(nomad => (
                         <Card
