@@ -11,19 +11,18 @@ const style = {
     }
 };
 
-const NavBar = () => (
+const NavBarHome = () => (
     <div>
         <Menu secondary inverted style={style.root}>
             <Menu.Item>MyFullFeaturesList</Menu.Item>
-            <Menu.Item href="/">Home</Menu.Item>
             <Menu.Menu position="right">
                 <Menu.Item href="/about">Want to know more?</Menu.Item>
-                <Menu.Item href="/location">Find Drop Place</Menu.Item>
                 <Menu.Item href="/contact">Contact</Menu.Item>
-                <Menu.Item href="/logout">Logout</Menu.Item>
+                <Menu.Item href="/">Sing Up</Menu.Item>
+                <Menu.Item href="/login">Login</Menu.Item>
             </Menu.Menu>
         </Menu>
     </div>
 );
 
-export default NavBar;
+export default NavBarHome;

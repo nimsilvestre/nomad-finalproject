@@ -21,6 +21,7 @@ export class Registration extends React.Component {
             error: false
         };
     }
+
     setFieldValue(e) {
         this[e.target.name] = e.target.value;
     }
@@ -84,13 +85,13 @@ export class Registration extends React.Component {
                             <Button onClick={() => this.submit()}>
                                 Submit
                             </Button>
-                            {this.state.error && (
-                                <div>Fail to register! Please, try again.</div>
-                            )}
                             <Link to="/login">
                                 <Button>Login</Button>
                             </Link>
                         </Form.Field>
+                        {this.state.error && (
+                            <div>Fail to register! Please, try again.</div>
+                        )}
                     </Form>
                 </Grid.Column>
             </Grid>

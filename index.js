@@ -5,9 +5,14 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 //const csurf = require('csurf');
-const uidSafe = require('uid-safe');
 const path = require('path');
 const db = require('./db.js');
+
+//image to s3
+const s3 = require('./s3.js');
+const multer = require('multer');
+const uidSafe = require('uid-safe');
+const config = require('./config.json');
 
 //cookieSession
 app.use(cookieParser());
@@ -48,6 +53,26 @@ if (process.env.NODE_ENV != 'production') {
 }
 //Serve Static
 app.use('/public', express.static(__dirname + '/public'));
+
+//MULTER STORAGE
+const diskStorage = multer.diskStorage({
+    destination: function(req, file, callback) {
+        callback(null, __dirname + '/uploads'); //null is waiting for an error in node, if theres no error, null will be ignored.
+    },
+    filename: function(req, file, callback) {
+        uidSafe(24).then(function(uid) {
+            //uidSafe generate un unique name with 24 caracters
+            callback(null, uid + path.extname(file.originalname));
+        });
+    }
+});
+
+const uploader = multer({
+    storage: diskStorage,
+    limits: {
+        fileSize: 2097152
+    }
+});
 
 //WELCOME ROUTE
 app.get('/welcome/', function(req, res) {

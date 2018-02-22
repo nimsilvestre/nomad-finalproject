@@ -63,13 +63,15 @@ export class Login extends React.Component {
                             />
                         </Form.Field>
                         <Form.Field>
-                            <Button onClick={() => this.submit()}>Login</Button>
+                            <Button onClick={() => this.submit()}>
+                                Submit
+                            </Button>
                             <Link to="/">
                                 <Button>Sing Up</Button>
                             </Link>
                         </Form.Field>
                         {this.state.error && (
-                            <div>Invalid Authentification! Try again.</div>
+                            <div>Fail to Login! Please Try again.</div>
                         )}
                     </Form>
                 </Grid.Column>

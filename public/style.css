@@ -1,0 +1,46 @@
+#DIV_1 {
+    color: rgb(17, 17, 17);
+    height: 385px;
+    max-width: 940px;
+    overflow-wrap: break-word;
+    text-align: center;
+    text-decoration: none solid rgb(17, 17, 17);
+    width: 940px;
+    word-wrap: break-word;
+    column-rule-color: rgb(17, 17, 17);
+    perspective-origin: 470px 192.5px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    transform-origin: 470px 192.5px;
+    caret-color: rgb(17, 17, 17);
+    border: 0px none rgb(17, 17, 17);
+    font: normal normal 400 normal 18px / normal ABCSans, Helvetica, Arial,
+        sans-serif;
+    margin: 32px 30px 40px;
+    outline: rgb(17, 17, 17) none 0px;
+} /*#DIV_1*/
+
+#H1_2 {
+    bottom: 0px;
+    color: rgb(17, 17, 17);
+    height: 144px;
+    left: 0px;
+    overflow-wrap: break-word;
+    position: relative;
+    right: 0px;
+    text-align: center;
+    text-decoration: none solid rgb(17, 17, 17);
+    text-rendering: optimizeLegibility;
+    top: 0px;
+    width: 755.344px;
+    word-wrap: break-word;
+    column-rule-color: rgb(17, 17, 17);
+    perspective-origin: 470px 72px;
+    transform-origin: 470px 72px;
+    caret-color: rgb(17, 17, 17);
+    border: 0px none rgb(17, 17, 17);
+    font: normal normal 700 normal 56px / 72.8px ABCSerif, 'Book Antiqua',
+        'Palatino Linotype', Palatino, serif;
+    margin: 0px;
+    outline: rgb(17, 17, 17) none 0px;
+    padding: 0px 92.3281px;
+} /*#H1_2*/

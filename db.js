@@ -4,6 +4,8 @@ const spicedPg = require('spiced-pg');
 const bcrypt = require('bcryptjs');
 var db;
 
+const S3config = require('./config.json');
+
 if (process.env.DATABASE_URL) {
     db = spicedPg(process.env.DATABASE_URL);
 } else {

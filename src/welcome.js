@@ -1,19 +1,33 @@
 import React from 'react';
 import { HashRouter, Route } from 'react-router-dom';
-import { Registration } from './register'; //curly because it is not the default component
+import { RegisterForm } from './RegisterForm'; //curly because it is not the default component
 import { Login } from './login';
-import NavBar from './components/NavBar';
+import NavBarHome from './components/NavBarHome';
 import Contact from './components/Contact';
 import About from './components/About';
-import { Container } from 'semantic-ui-react';
+import { Container, Header, Grid } from 'semantic-ui-react';
+
+const style = {
+    root: {
+        paddingTop: '15%',
+        height: '385px',
+        color: 'white',
+        borderBotton: '1px dashed #dfdfe2'
+    }
+};
 
 export function Welcome() {
     return (
         <div>
-            <NavBar />
+            <NavBarHome />
             <HashRouter>
-                <Container text>
-                    <Route exact path="/" component={Registration} />
+                <Container text style={style.root}>
+                    <Grid centered>
+                        <Header>
+                            <h1>WELCOME TO URBAN NOMAD!</h1>
+                        </Header>
+                    </Grid>
+                    <Route exact path="/" component={RegisterForm} />
                     <Route path="/login" component={Login} />
                     <Route path="/about" component={About} />
                     <Route path="/contact" component={Contact} />
