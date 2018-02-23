@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu } from 'semantic-ui-react';
+import { Menu , Image} from 'semantic-ui-react';
 import { browserHistory } from 'react-router';
 
 const style = {
@@ -14,7 +14,7 @@ const style = {
 const NavBarHome = () => (
     <div>
         <Menu secondary inverted style={style.root}>
-            <Menu.Item>MyFullFeaturesList</Menu.Item>
+            <Menu.Item><img src='./public/logoNav.svg'/></Menu.Item>
             <Menu.Menu position="right">
                 <Menu.Item href="/about">Want to know more?</Menu.Item>
                 <Menu.Item href="/contact">Contact</Menu.Item>

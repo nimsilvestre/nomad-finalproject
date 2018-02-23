@@ -14,7 +14,7 @@ const style = {
 const NavBar = () => (
     <div>
         <Menu secondary inverted style={style.root}>
-            <Menu.Item>MyFullFeaturesList</Menu.Item>
+            <Menu.Item><img src='./public/logoNav.svg'/></Menu.Item>
             <Menu.Item href="/">Home</Menu.Item>
             <Menu.Menu position="right">
                 <Menu.Item href="/about">Want to know more?</Menu.Item>

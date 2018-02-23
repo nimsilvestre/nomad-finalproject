@@ -25,7 +25,7 @@ export class RegisterForm extends React.Component {
         return (
             <div>
                 <Grid centered style={style.root}>
-                    <Button onClick={this.toggleHidden.bind(this)}>
+                    <Button color='teal' onClick={this.toggleHidden.bind(this)}>
                         START HELPING HERE!
                     </Button>
                 </Grid>

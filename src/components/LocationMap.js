@@ -1,6 +1,7 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Header, Grid } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 const locations = [
     {
@@ -121,6 +122,7 @@ const locations = [
         url: 'https://www.jahresringe-ev.de'
     }
 ];
+
 function searchingFor(term) {
     return function(x) {
         return (
@@ -128,6 +130,17 @@ function searchingFor(term) {
         );
     };
 }
+
+const style = {
+    div1: {
+        margin: '5%'
+    },
+    div2: {
+        marginTop: '10%',
+        marginBottom: '5%'
+    }
+};
+
 export class LocationMap extends React.Component {
     constructor(props) {
         super(props);
@@ -146,23 +159,33 @@ export class LocationMap extends React.Component {
         const { term, people } = this.state;
         return (
             <div>
-                <form>
-                    <input
-                        type="text"
-                        onChange={this.searchHandler}
-                        value={term}
-                    />
-                </form>
-                <Container text>
-                    {locations.filter(searchingFor(term)).map(location => (
-                        <div key={location.id}>
-                            <Header>{location.name}</Header>
-                            <h3>{location.neighborhood}</h3>
-                            <h4>{location.items}</h4>
-                            <p>{location.address}</p>
-                        </div>
-                    ))}
-                </Container>
+                <Grid centered>
+                    <form style={style.div2}>
+                        <input
+                            type="text"
+                            onChange={this.searchHandler}
+                            value={term}
+                        />
+                    </form>
+                </Grid>
+                <div style={style.div1}>
+                    <Container text>
+                        {locations.filter(searchingFor(term)).map(location => (
+                            <div key={location.id}>
+                                <Header>{location.name}</Header>
+                                <h3>{location.neighborhood}</h3>
+                                <h4>{location.items}</h4>
+                                <a
+                                    href={
+                                        'http://maps.google.com/?q=' +
+                                        location.address
+                                    }>
+                                    <p>{location.address}</p>
+                                </a>
+                            </div>
+                        ))}
+                    </Container>
+                </div>
             </div>
         );
     }

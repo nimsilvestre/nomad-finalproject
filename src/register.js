@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { HashRouter, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { Button, Form, Grid } from 'semantic-ui-react';
+import { Button, Form, Grid, Input } from 'semantic-ui-react';
 
 const style = {
     root: {
@@ -50,7 +50,7 @@ export class Registration extends React.Component {
                     <Form>
                         <Form.Field>
                             <label>First Name</label>
-                            <input
+                            <Input
                                 placeholder="First Name"
                                 name="first"
                                 onChange={e => this.setFieldValue(e)}
@@ -58,23 +58,23 @@ export class Registration extends React.Component {
                         </Form.Field>
                         <Form.Field>
                             <label>Last Name</label>
-                            <input
+                            <Input
                                 placeholder="Last Name"
                                 name="last"
                                 onChange={e => this.setFieldValue(e)}
                             />
                         </Form.Field>
-                        <Form.Field>
+                        <Form.Field required>
                             <label>Email</label>
-                            <input
+                            <Input
                                 placeholder="Email"
                                 name="email"
                                 onChange={e => this.setFieldValue(e)}
                             />
                         </Form.Field>
-                        <Form.Field>
+                        <Form.Field required>
                             <label>Password</label>
-                            <input
+                            <Input
                                 placeholder="Password"
                                 name="password"
                                 type="password"

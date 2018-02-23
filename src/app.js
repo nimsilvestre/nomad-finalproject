@@ -7,9 +7,10 @@ import { ModalNomads } from './ModalNomads';
 import { Container, Grid } from 'semantic-ui-react';
 import About from './components/About';
 import Contact from './components/Contact';
-import {LocationMap} from './components/LocationMap';
+import { LocationMap } from './components/LocationMap';
 import NavBar from './components/NavBar';
 import HeaderApp from './components/HeaderApp';
+
 
 const style = {
     root: {
@@ -32,7 +33,7 @@ export default class App extends React.Component {
         this.setState({
             isHidden: !this.state.isHidden,
             currentNomad: this.state.nomads.find(nomad => {
-                return nomad.id == id
+                return nomad.id == id;
             })
         });
     }
@@ -52,7 +53,7 @@ export default class App extends React.Component {
             <BrowserRouter>
                 <div>
                     <NavBar />
-                    <Container text>
+                    <Container text  style={style.background}>
                         <div style={style.div}>
                             <Grid centered style={style.root}>
                                 <HeaderApp />
